@@ -189,10 +189,14 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 700px;
   margin: 0 auto 2rem;
   color: rgba(224, 224, 224, 0.9);
+  font-weight: 600; /* Increased from default to 600 for stronger bold */
   /* Enhanced text shadow for subtitle */
   text-shadow: 
     0 0 5px rgba(0, 0, 0, 0.8),
-    0 0 10px rgba(0, 0, 0, 0.6);
+    0 0 10px rgba(0, 0, 0, 0.6),
+    0 0 15px rgba(0, 0, 0, 0.4);
+  /* Added dark glow effect */
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.6));
 }
 
 .hero-stats {
@@ -202,22 +206,50 @@ h1, h2, h3, h4, h5, h6 {
 
 .stat-number {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 800; /* Increased from 700 to 800 for stronger bold */
   font-family: 'Rajdhani', sans-serif;
   margin-bottom: 0.5rem;
-  text-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
+  /* Enhanced text shadow for stat numbers */
+  text-shadow: 
+    0 0 8px rgba(0, 0, 0, 0.8),
+    0 0 15px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(0, 0, 0, 0.4);
+  /* Added dark glow effect */
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+}
+
+/* Enhanced gradient text for stat numbers */
+.stat-number.gradient-text {
+  font-weight: 800;
+  /* Additional glow for gradient stat numbers */
+  text-shadow: 
+    0 0 10px rgba(0, 0, 0, 0.9),
+    0 0 20px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.8));
 }
 
 .stat-label {
   font-size: 1rem;
-  color: rgba(224, 224, 224, 0.7);
+  color: rgba(224, 224, 224, 0.9); /* Increased from 0.7 to 0.9 for better visibility */
+  font-weight: 600; /* Increased from default to 600 for stronger bold */
   text-transform: uppercase;
   letter-spacing: 1px;
+  /* Enhanced text shadow for stat labels */
+  text-shadow: 
+    0 0 3px rgba(0, 0, 0, 0.8),
+    0 0 6px rgba(0, 0, 0, 0.6),
+    0 0 10px rgba(0, 0, 0, 0.4);
+  /* Added dark glow effect */
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.6));
 }
 
 .hero-buttons .btn {
   margin: 0.5rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-weight: 600; /* Increased from default to 600 for stronger bold */
+  /* Enhanced text shadow for buttons */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
 }
 
 /* Section Styles */
@@ -448,6 +480,14 @@ section {
   .hero-title {
     font-size: 2.8rem;
   }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -494,6 +534,10 @@ section {
     font-size: 1.8rem;
   }
   
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  
   section {
     padding: 4rem 0;
   }
@@ -509,5 +553,13 @@ section {
   
   .hero-section {
     padding: 4rem 0 2rem;
+  }
+  
+  .stat-number {
+    font-size: 1.3rem;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
   }
 }
