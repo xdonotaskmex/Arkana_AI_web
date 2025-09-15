@@ -71,6 +71,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check for logo and display it
     checkAndDisplayLogo();
+    
+    // Create flying particles effect
+    createFlyingParticles();
 });
 
 // Function to check for logo and display it
@@ -96,6 +99,50 @@ function checkAndDisplayLogo() {
             logoContainer.style.display = 'none';
         };
     }
+}
+
+// Function to create flying particles effect
+function createFlyingParticles() {
+    const heroSection = document.querySelector('.hero-section');
+    if (!heroSection) return;
+    
+    // Create particles at regular intervals
+    setInterval(() => {
+        createParticle(heroSection);
+    }, 300);
+}
+
+// Function to create a single particle
+function createParticle(container) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    
+    // Randomly select particle size class
+    const sizes = ['particle--1', 'particle--2', 'particle--3', 'particle--4'];
+    const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
+    particle.classList.add(randomSize);
+    
+    // Random position around the hero section
+    const startX = Math.random() * window.innerWidth;
+    const startY = Math.random() * window.innerHeight;
+    
+    particle.style.left = `${startX}px`;
+    particle.style.top = `${startY}px`;
+    
+    // Random color (blue or purple to match theme)
+    const colors = ['#4cc9f0', '#9d4edd'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.background = randomColor;
+    
+    // Add glow effect
+    particle.style.boxShadow = `0 0 10px ${randomColor}`;
+    
+    container.appendChild(particle);
+    
+    // Remove particle after animation completes
+    setTimeout(() => {
+        particle.remove();
+    }, 15000); // Match the longest animation duration
 }
 
 // Handle window resize
