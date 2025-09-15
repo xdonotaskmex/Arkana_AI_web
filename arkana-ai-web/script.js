@@ -69,37 +69,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Check for logo and display it
-    checkAndDisplayLogo();
-    
     // Create flying particles effect
     createFlyingParticles();
 });
-
-// Function to check for logo and display it
-function checkAndDisplayLogo() {
-    const logoContainer = document.querySelector('.logo-container');
-    if (logoContainer) {
-        // Create an image element for the logo
-        const logoImg = document.createElement('img');
-        logoImg.src = 'images/IMG_1548.JPG';
-        logoImg.alt = 'ARKANA AI Logo';
-        logoImg.className = 'hero-logo';
-        
-        // Add load event to show logo when it's available
-        logoImg.onload = function() {
-            logoContainer.innerHTML = '';
-            logoContainer.appendChild(logoImg);
-            logoContainer.style.display = 'block';
-        };
-        
-        // Add error handling
-        logoImg.onerror = function() {
-            // If logo doesn't exist, remove the container
-            logoContainer.style.display = 'none';
-        };
-    }
-}
 
 // Function to create flying particles effect
 function createFlyingParticles() {

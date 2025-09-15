@@ -156,26 +156,6 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 2rem;
 }
 
-.logo-container {
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.hero-logo {
-  max-height: 100px;
-  max-width: 100%;
-  filter: drop-shadow(0 0 15px rgba(76, 201, 240, 0.7));
-  transition: all 0.3s ease;
-}
-
-.hero-logo:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 20px rgba(76, 201, 240, 0.9));
-}
-
 .hero-title {
   font-size: 3.5rem;
   font-weight: 700;
@@ -486,14 +466,6 @@ section {
   .stat-number {
     font-size: 1.5rem;
   }
-  
-  .logo-container {
-    height: 80px;
-  }
-  
-  .hero-logo {
-    max-height: 80px;
-  }
 }
 
 @media (max-width: 576px) {
@@ -516,13 +488,5 @@ section {
   
   .hero-section {
     padding: 4rem 0 2rem;
-  }
-  
-  .logo-container {
-    height: 60px;
-  }
-  
-  .hero-logo {
-    max-height: 60px;
   }
 }
