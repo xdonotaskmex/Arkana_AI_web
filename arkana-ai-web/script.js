@@ -68,7 +68,35 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add form validation or submission handling here if needed
         });
     });
+    
+    // Check for logo and display it
+    checkAndDisplayLogo();
 });
+
+// Function to check for logo and display it
+function checkAndDisplayLogo() {
+    const logoContainer = document.querySelector('.logo-container');
+    if (logoContainer) {
+        // Create an image element for the logo
+        const logoImg = document.createElement('img');
+        logoImg.src = 'images/IMG_1548.JPG';
+        logoImg.alt = 'ARKANA AI Logo';
+        logoImg.style.display = 'none'; // Hide initially
+        
+        // Add load event to show logo when it's available
+        logoImg.onload = function() {
+            logoImg.style.display = 'block';
+        };
+        
+        // Add error handling
+        logoImg.onerror = function() {
+            // If logo doesn't exist, remove the container or show a placeholder
+            logoContainer.style.display = 'none';
+        };
+        
+        logoContainer.appendChild(logoImg);
+    }
+}
 
 // Handle window resize
 window.addEventListener('resize', function() {
