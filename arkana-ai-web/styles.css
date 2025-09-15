@@ -26,7 +26,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Rajdhani', sans-serif;
-  font-weight: 600;
+  font-weight: 700; /* Increased from 600 to 700 for stronger bold */
 }
 
 /* Gradient Text */
@@ -37,6 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   background-clip: text;
   text-fill-color: transparent;
   position: relative;
+  font-weight: 700; /* Ensure strongest bold for gradient text */
 }
 
 /* Flying Particles Animation */
@@ -158,12 +159,29 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-title {
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 800; /* Increased from 700 to 800 for even stronger bold */
   margin-bottom: 1.5rem;
   line-height: 1.2;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   position: relative;
   display: inline-block;
+  /* Enhanced text shadow for better contrast against globe background */
+  text-shadow: 
+    0 0 10px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(0, 0, 0, 0.4);
+  /* Added dark glow effect */
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
+}
+
+/* Enhanced gradient text for better visibility */
+.hero-title .gradient-text {
+  font-weight: 800;
+  /* Additional glow for gradient text */
+  text-shadow: 
+    0 0 15px rgba(0, 0, 0, 0.9),
+    0 0 25px rgba(0, 0, 0, 0.7),
+    0 0 35px rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.8));
 }
 
 .hero-subtitle {
@@ -171,7 +189,10 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 700px;
   margin: 0 auto 2rem;
   color: rgba(224, 224, 224, 0.9);
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  /* Enhanced text shadow for subtitle */
+  text-shadow: 
+    0 0 5px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 .hero-stats {
