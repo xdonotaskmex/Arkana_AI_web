@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
             scaleMobile: 1.00,
             color: 0x4cc9f0,
             color2: 0x9d4edd,
-            backgroundColor: 0xd141f,
+            backgroundColor: 0x0d141f,
             size: 1.00,
             lineColor: 0x4cc9f0,
             lineWidth: 1.00,
             showDots: true,
             dotColor: 0x9d4edd,
             dotSize: 1.00,
-            backgroundAlpha: 0.00
+            backgroundAlpha: 1.00
         });
     }
 
@@ -81,20 +81,20 @@ function checkAndDisplayLogo() {
         const logoImg = document.createElement('img');
         logoImg.src = 'images/IMG_1548.JPG';
         logoImg.alt = 'ARKANA AI Logo';
-        logoImg.style.display = 'none'; // Hide initially
+        logoImg.className = 'hero-logo';
         
         // Add load event to show logo when it's available
         logoImg.onload = function() {
-            logoImg.style.display = 'block';
+            logoContainer.innerHTML = '';
+            logoContainer.appendChild(logoImg);
+            logoContainer.style.display = 'block';
         };
         
         // Add error handling
         logoImg.onerror = function() {
-            // If logo doesn't exist, remove the container or show a placeholder
+            // If logo doesn't exist, remove the container
             logoContainer.style.display = 'none';
         };
-        
-        logoContainer.appendChild(logoImg);
     }
 }
 

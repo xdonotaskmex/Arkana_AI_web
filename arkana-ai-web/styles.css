@@ -105,16 +105,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-container {
-  height: 80px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-.logo-container img {
-  max-height: 80px;
+.hero-logo {
+  max-height: 100px;
   max-width: 100%;
-  filter: drop-shadow(0 0 10px rgba(76, 201, 240, 0.5));
+  filter: drop-shadow(0 0 15px rgba(76, 201, 240, 0.7));
+  transition: all 0.3s ease;
+}
+
+.hero-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px rgba(76, 201, 240, 0.9));
 }
 
 .hero-title {
@@ -122,13 +129,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
   max-width: 700px;
   margin: 0 auto 2rem;
-  color: rgba(224, 224, 224, 0.8);
+  color: rgba(224, 224, 224, 0.9);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 .hero-stats {
@@ -141,6 +150,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   font-family: 'Rajdhani', sans-serif;
   margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
 }
 
 .stat-label {
@@ -152,6 +162,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-buttons .btn {
   margin: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Section Styles */
@@ -180,18 +191,20 @@ section {
   height: 100%;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .feature-card:hover {
   transform: translateY(-10px);
   border-color: var(--primary-accent);
-  box-shadow: 0 10px 30px rgba(76, 201, 240, 0.2);
+  box-shadow: 0 15px 30px rgba(76, 201, 240, 0.3);
 }
 
 .feature-icon {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   color: var(--primary-accent);
+  text-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
 }
 
 .feature-card h3 {
@@ -209,12 +222,13 @@ section {
   position: relative;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .persona-card:hover {
   transform: translateY(-10px);
   border-color: var(--primary-accent);
-  box-shadow: 0 10px 30px rgba(76, 201, 240, 0.2);
+  box-shadow: 0 15px 30px rgba(76, 201, 240, 0.3);
 }
 
 .persona-badge {
@@ -241,6 +255,7 @@ section {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   color: var(--primary-accent);
+  text-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
 }
 
 .persona-card h3 {
@@ -270,6 +285,7 @@ section {
   border-radius: 15px;
   padding: 2rem;
   backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .command-item {
@@ -290,6 +306,7 @@ section {
   margin-bottom: 0.5rem;
   color: var(--primary-accent);
   font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .command-description {
@@ -332,11 +349,13 @@ section {
   color: var(--text-light);
   font-size: 1.5rem;
   transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .social-link:hover {
   color: var(--primary-accent);
   transform: translateY(-3px);
+  text-shadow: 0 0 10px rgba(76, 201, 240, 0.7);
 }
 
 /* Buttons */
@@ -345,6 +364,7 @@ section {
   padding: 0.75rem 1.5rem;
   font-weight: 600;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary {
@@ -412,6 +432,14 @@ section {
   .stat-number {
     font-size: 1.5rem;
   }
+  
+  .logo-container {
+    height: 80px;
+  }
+  
+  .hero-logo {
+    max-height: 80px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -434,5 +462,13 @@ section {
   
   .hero-section {
     padding: 4rem 0 2rem;
+  }
+  
+  .logo-container {
+    height: 60px;
+  }
+  
+  .hero-logo {
+    max-height: 60px;
   }
 }
