@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found | ARKANA AI</title>
+    <!-- SEO Meta Description -->
+    <meta name="description" content="ARKANA AI - Page not found. Return to our AI-powered cryptocurrency analysis platform.">
+    <meta name="keywords" content="ARKANA AI, cryptocurrency analysis, AI trading bot, technical analysis, crypto signals, Telegram bot">
+    <meta name="author" content="ARKANA AI">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -19,10 +23,72 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            background-image: 
+                linear-gradient(rgba(76, 201, 240, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(76, 201, 240, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(76, 201, 240, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(76, 201, 240, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: gridMove 20s linear infinite;
+            z-index: -1;
+        }
+        @keyframes gridMove {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(30px, 30px);
+            }
         }
         .error-container {
             max-width: 600px;
             padding: 2rem;
+            background: rgba(13, 20, 31, 0.7);
+            border: 1px solid rgba(76, 201, 240, 0.2);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .error-container::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #4cc9f0, #9d4edd, #4cc9f0);
+            z-index: -1;
+            border-radius: 17px;
+            animation: glow 3s linear infinite;
+            opacity: 0.5;
+        }
+        @keyframes glow {
+            0% {
+                filter: blur(5px);
+                opacity: 0.5;
+            }
+            50% {
+                filter: blur(10px);
+                opacity: 0.8;
+            }
+            100% {
+                filter: blur(5px);
+                opacity: 0.5;
+            }
         }
         .gradient-text {
             background: linear-gradient(90deg, #4cc9f0, #9d4edd);
@@ -30,8 +96,24 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        .error-title {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+        .error-subtitle {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .error-message {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: rgba(224, 224, 224, 0.9);
             font-family: 'Rajdhani', sans-serif;
-            font-weight: 700;
         }
         .btn-gradient {
             background: linear-gradient(90deg, #4cc9f0, #9d4edd);
@@ -43,19 +125,22 @@
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(76, 201, 240, 0.4);
         }
         .btn-gradient:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(76, 201, 240, 0.4);
+            box-shadow: 0 5px 20px rgba(76, 201, 240, 0.6);
             color: white;
         }
     </style>
 </head>
 <body>
     <div class="error-container">
-        <h1 class="gradient-text" style="font-size: 5rem;">404</h1>
-        <h2 class="gradient-text mb-4">Page Not Found</h2>
-        <p class="mb-4">The page you're looking for doesn't exist or has been moved.</p>
+        <h1 class="gradient-text error-title">404</h1>
+        <h2 class="gradient-text error-subtitle">Page Not Found</h2>
+        <p class="error-message">The page you're looking for doesn't exist or has been moved.</p>
         <a href="/" class="btn-gradient">
             <i data-feather="home"></i> Back to Home
         </a>

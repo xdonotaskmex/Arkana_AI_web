@@ -15,6 +15,22 @@ ARKANA AI is an advanced financial analysis tool that provides AI-powered insigh
 - **News Analysis**: Financial news analysis using Tavily API to understand market sentiment
 - **Premium Features**: Subscription-based access to advanced personas and unlimited analyses
 
+## Recent Enhancements
+
+### SEO Improvements
+- Added comprehensive meta descriptions for better search engine visibility
+- Implemented Open Graph and Twitter Card meta tags for social sharing
+- Optimized keywords for cryptocurrency trading and AI analysis
+
+### Dark Futuristic Theme
+- Implemented a premium dark theme with deep navy blue background (#0d141f)
+- Added glowing neon accents in cyan (#4cc9f0) and purple (#9d4edd)
+- Integrated metallic gradient elements blending silver (#cccccc), cyan, and purple
+- Updated typography to use futuristic geometric fonts (Orbitron for titles, Rajdhani for text)
+- Added smooth glass-like cards with blurred dark backgrounds and neon glow edges
+- Implemented background with subtle animated futuristic grid lines
+- Enhanced overall look to be premium, AI-powered, mysterious and high-tech
+
 ## Deployment
 
 To deploy this landing page on GitHub Pages, you have two options:
