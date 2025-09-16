@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Create flying particles effect
     createFlyingParticles();
+    
 });
 
 // Function to create flying particles effect

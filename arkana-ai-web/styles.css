@@ -145,8 +145,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.8rem;
   letter-spacing: 2px;
   text-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
-  display: flex;
-  align-items: center;
 }
 
 .logo-img {
@@ -487,6 +485,58 @@ section {
   font-family: 'Rajdhani', sans-serif;
 }
 
+/* Features Section */
+.features-section {
+  background: rgba(13, 20, 31, 0.7);
+  position: relative;
+}
+
+.features-container {
+  background: var(--glass-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 15px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.features-container::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--primary-accent), var(--secondary-accent), var(--primary-accent));
+  z-index: -1;
+  border-radius: 17px;
+  animation: glow 3s linear infinite;
+  opacity: 0.5;
+}
+
+.feature-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature-item:last-child {
+  border-bottom: none;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.feature-description {
+  color: rgba(224, 224, 224, 0.8);
+  font-family: 'Rajdhani', sans-serif;
+}
+
 /* Commands Section */
 .commands-section {
   background: rgba(13, 20, 31, 0.7);
@@ -596,8 +646,6 @@ section {
   margin-bottom: 1rem;
   letter-spacing: 2px;
   text-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
-  display: flex;
-  align-items: center;
 }
 
 .footer-logo .logo-img {
