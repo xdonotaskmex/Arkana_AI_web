@@ -55,20 +55,24 @@ If you prefer to configure GitHub Pages manually:
 6. Click "Save"
 7. Your site will be available at `https://[username].github.io/[repository-name]/`
 
-## Custom Domain
+## Custom Domain Configuration
 
-To use a custom domain:
+To use a custom domain like `arkanaai.xyz`:
 
-1. In your repository settings, go to the "GitHub Pages" section
-2. In the "Custom domain" field, enter your domain name
-3. Click "Save"
-4. Configure your domain provider to point to your GitHub Pages site:
-   - For an apex domain (example.com), create an A record pointing to:
+1. Ensure your repository contains a `CNAME` file in the `arkana-ai-web` directory with your domain name
+2. Configure your domain provider's DNS settings:
+   - For an apex domain (example.com), create A records pointing to:
      - 185.199.108.153
      - 185.199.109.153
      - 185.199.110.153
      - 185.199.111.153
    - For a subdomain (www.example.com), create a CNAME record pointing to [username].github.io
+3. In your repository settings, go to the "GitHub Pages" section
+4. In the "Custom domain" field, enter your domain name
+5. Click "Save"
+6. Enforce HTTPS if available (recommended)
+
+Note: DNS changes can take up to 24 hours to propagate globally.
 
 ## Updating the Site
 
@@ -85,6 +89,7 @@ To update the landing page:
 - `styles.css` - Custom styling
 - `script.js` - JavaScript functionality
 - `404.html` - Error page
+- `CNAME` - Custom domain configuration
 - `README.md` - This file
 
 ## Dependencies
