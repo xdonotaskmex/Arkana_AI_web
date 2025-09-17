@@ -81,10 +81,10 @@ function createFlyingParticles() {
     const heroSection = document.querySelector('.hero-section');
     if (!heroSection) return;
     
-    // Create particles at regular intervals
+    // Reduce particle frequency for better performance
     setInterval(() => {
         createParticle(heroSection);
-    }, 300);
+    }, 600); // Changed from 300ms to 600ms
 }
 
 // Function to create a single particle
@@ -104,20 +104,19 @@ function createParticle(container) {
     particle.style.left = `${startX}px`;
     particle.style.top = `${startY}px`;
     
-    // Random color (blue or purple to match theme)
-    const colors = ['#4cc9f0', '#9d4edd'];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    particle.style.background = randomColor;
-    
-    // Add glow effect
-    particle.style.boxShadow = `0 0 10px ${randomColor}`;
+    // Use consistent color with glow effect
+    const color = '#4cc9f0';
+    particle.style.background = color;
+    particle.style.boxShadow = `0 0 8px 2px ${color}`;
     
     container.appendChild(particle);
     
     // Remove particle after animation completes
     setTimeout(() => {
-        particle.remove();
-    }, 15000); // Match the longest animation duration
+        if (particle.parentNode) {
+            particle.parentNode.removeChild(particle);
+        }
+    }, 8000); // Reduced from 15000ms to 8000ms for better performance
 }
 
 // Handle window resize

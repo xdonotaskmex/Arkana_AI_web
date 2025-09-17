@@ -86,6 +86,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
   z-index: 1;
   box-shadow: 0 0 10px var(--primary-accent);
+  will-change: transform, opacity; /* Optimize for animation performance */
 }
 
 .particle--1 {
@@ -222,25 +223,46 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   display: inline-block;
   font-family: 'Orbitron', sans-serif;
-  /* Enhanced text shadow for better contrast against globe background */
+  /* Consistent styling with unified color and glow effect */
+  color: #e0e0e0;
   text-shadow: 
-    0 0 10px rgba(0, 0, 0, 0.8),
-    0 0 20px rgba(0, 0, 0, 0.6),
-    0 0 30px rgba(0, 0, 0, 0.4);
-  /* Added dark glow effect */
-  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
+    0 0 10px rgba(76, 201, 240, 0.5),
+    0 0 20px rgba(76, 201, 240, 0.3),
+    0 0 30px rgba(76, 201, 240, 0.2);
+  filter: drop-shadow(0 0 15px rgba(76, 201, 240, 0.4));
   letter-spacing: 2px;
+  animation: subtleGlow 3s ease-in-out infinite alternate;
 }
 
-/* Enhanced gradient text for better visibility */
+/* Remove gradient from hero title span to maintain visual consistency */
 .hero-title .gradient-text {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: inherit;
+  background-clip: unset;
+  text-fill-color: inherit;
   font-weight: 800;
-  /* Additional glow for gradient text */
+  /* Consistent glow effect */
   text-shadow: 
-    0 0 15px rgba(0, 0, 0, 0.9),
-    0 0 25px rgba(0, 0, 0, 0.7),
-    0 0 35px rgba(0, 0, 0, 0.5);
-  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.8));
+    0 0 10px rgba(76, 201, 240, 0.5),
+    0 0 20px rgba(76, 201, 240, 0.3),
+    0 0 30px rgba(76, 201, 240, 0.2);
+  filter: drop-shadow(0 0 15px rgba(76, 201, 240, 0.4));
+}
+
+@keyframes subtleGlow {
+  0% {
+    text-shadow: 
+      0 0 10px rgba(76, 201, 240, 0.5),
+      0 0 20px rgba(76, 201, 240, 0.3),
+      0 0 30px rgba(76, 201, 240, 0.2);
+  }
+  100% {
+    text-shadow: 
+      0 0 15px rgba(76, 201, 240, 0.6),
+      0 0 25px rgba(76, 201, 240, 0.4),
+      0 0 35px rgba(76, 201, 240, 0.3);
+  }
 }
 
 .hero-subtitle {
@@ -269,25 +291,44 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   font-family: 'Orbitron', sans-serif;
   margin-bottom: 0.5rem;
-  /* Enhanced text shadow for stat numbers */
+  /* Consistent styling with unified color and glow effect */
+  color: #e0e0e0;
   text-shadow: 
-    0 0 8px rgba(0, 0, 0, 0.8),
-    0 0 15px rgba(0, 0, 0, 0.6),
-    0 0 20px rgba(0, 0, 0, 0.4);
-  /* Added dark glow effect */
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+    0 0 8px rgba(76, 201, 240, 0.5),
+    0 0 15px rgba(76, 201, 240, 0.3),
+    0 0 20px rgba(76, 201, 240, 0.2);
+  filter: drop-shadow(0 0 10px rgba(76, 201, 240, 0.4));
   letter-spacing: 1px;
+  animation: subtleGlow 3s ease-in-out infinite alternate;
 }
 
-/* Enhanced gradient text for stat numbers */
+/* Remove gradient styling to maintain consistency */
 .stat-number.gradient-text {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: inherit;
+  background-clip: unset;
+  text-fill-color: inherit;
   font-weight: 800;
-  /* Additional glow for gradient stat numbers */
+  /* Consistent glow effect */
   text-shadow: 
-    0 0 10px rgba(0, 0, 0, 0.9),
-    0 0 20px rgba(0, 0, 0, 0.7),
-    0 0 30px rgba(0, 0, 0, 0.5);
-  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.8));
+    0 0 8px rgba(76, 201, 240, 0.5),
+    0 0 15px rgba(76, 201, 240, 0.3),
+    0 0 20px rgba(76, 201, 240, 0.2);
+  filter: drop-shadow(0 0 10px rgba(76, 201, 240, 0.4));
+}
+
+/* Different sizes for each number while maintaining consistent styling */
+.stat-number:nth-child(1) {
+  font-size: 2.5rem; /* 50+ */
+}
+
+.stat-number:nth-child(2) {
+  font-size: 2rem; /* 6 */
+}
+
+.stat-number:nth-child(3) {
+  font-size: 1.8rem; /* 24/7 */
 }
 
 .stat-label {
