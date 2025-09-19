@@ -37,3 +37,12 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  enforce-https:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enforce HTTPS
+        run: |
+          echo "HTTPS enforcement is handled automatically by GitHub Pages"
+          echo "Custom domains with GitHub Pages automatically redirect HTTP to HTTPS"
