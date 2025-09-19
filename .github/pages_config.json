@@ -1,0 +1,9 @@
+{
+  "domain": "www.arkanaai.xyz",
+  "https_only": true,
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-static"
+    }
+  ]
+}
