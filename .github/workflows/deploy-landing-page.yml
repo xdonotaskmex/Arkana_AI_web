@@ -1,10 +1,10 @@
-name: Deploy Landing Page
+name: Deploy Root to Pages
 
 on:
   push:
     branches: [ main ]
     paths:
-      - 'arkana-ai-web/**'
+      - '**'
   workflow_dispatch:
 
 permissions:
@@ -29,25 +29,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload artifact
+      - name: Upload artifact from root
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './arkana-ai-web'
+          path: '.'  # Ova točka (.) govori da se učita sve iz root direktorija repozitorija
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-  enforce-https:
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Wait for deployment
-        run: |
-          echo "Waiting for deployment to complete..."
-          sleep 30
-
-      - name: Check deployment status
-        run: |
-          echo "Deployment completed. GitHub Pages should now request SSL certificate."
-          echo "Please check your repository settings to enable 'Enforce HTTPS' once the certificate is issued."
