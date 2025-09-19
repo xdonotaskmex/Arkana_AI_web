@@ -42,7 +42,12 @@ jobs:
     needs: deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Enforce HTTPS
+      - name: Wait for deployment
         run: |
-          echo "HTTPS enforcement is handled automatically by GitHub Pages"
-          echo "Custom domains with GitHub Pages automatically redirect HTTP to HTTPS"
+          echo "Waiting for deployment to complete..."
+          sleep 30
+
+      - name: Check deployment status
+        run: |
+          echo "Deployment completed. GitHub Pages should now request SSL certificate."
+          echo "Please check your repository settings to enable 'Enforce HTTPS' once the certificate is issued."
