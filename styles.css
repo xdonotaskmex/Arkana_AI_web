@@ -711,44 +711,90 @@ section {
 .feedback-section {
     background: rgba(13, 20, 31, 0.7);
     position: relative;
+    padding: 6rem 0;
 }
 
-.feedback-card {
+.feedback-container {
     background: var(--glass-bg);
     border: 1px solid var(--card-border);
-    border-radius: 10px;
-    padding: 0.75rem;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
-    height: auto;
+    z-index: 1;
+    width: 100%;
+}
+
+.feedback-container::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--primary-accent), var(--secondary-accent), var(--primary-accent));
+    z-index: -1;
+    border-radius: 17px;
+    animation: glow 3s linear infinite;
+    opacity: 0.5;
+}
+
+.feedback-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+}
+
+.feedback-item {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
     z-index: 1;
-    margin-bottom: 0.5rem;
+    min-width: 250px;
+    width: calc(50% - 2rem);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback-item:hover {
+    transform: translateY(-10px);
+    background: rgba(76, 201, 240, 0.15);
+    border: 1px solid var(--primary-accent);
+    box-shadow: 0 10px 25px rgba(76, 201, 240, 0.3);
 }
 
 .feedback-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.8rem;
-    padding-bottom: 0.8rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .feedback-text {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 0.85rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
     color: rgba(224, 224, 224, 0.9);
-    line-height: 1.3;
+    line-height: 1.6;
 }
 
 .feedback-rating {
     display: flex;
-    gap: 0.2rem;
+    gap: 0.3rem;
 }
 
 .star-filled {
@@ -757,15 +803,15 @@ section {
 }
 
 .feedback-rating i {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     color: rgba(255, 255, 255, 0.3); /* Gray for empty stars */
     display: inline-block;
 }
 
 .user-initial {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
     display: flex;
@@ -773,12 +819,12 @@ section {
     justify-content: center;
     font-weight: 600;
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.7rem;
-    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    margin-right: 0.8rem;
 }
 
 .feedback-status {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     color: rgba(76, 201, 240, 0.8);
     font-family: 'Rajdhani', sans-serif;
 }
@@ -791,7 +837,13 @@ section {
 .user-name {
     font-weight: 600;
     font-family: 'Rajdhani', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.feedback-date {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(224, 224, 224, 0.7);
 }
 
 /* Analysis Preview Section */
@@ -1129,7 +1181,7 @@ section {
     border-left: 2px solid var(--primary-accent);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
     opacity: 0;
 }
 
@@ -1161,7 +1213,7 @@ section {
 }
 
 .faq-question.active .faq-answer {
-    max-height: 1000px;
+    max-height: 2000px; /* Increased from 1000px to ensure enough space */
     padding: 1rem;
     opacity: 1;
 }
@@ -1173,6 +1225,25 @@ section {
 .faq-question i {
     transition: transform 0.3s ease;
     color: var(--primary-accent);
+    cursor: pointer;
+    font-size: 1.5rem; /* Make icon more visible */
+    min-width: 24px; /* Ensure consistent sizing */
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Make it look like a button */
+    padding: 5px;
+    background: rgba(76, 201, 240, 0.1); /* Subtle background */
+}
+
+.faq-question i:hover {
+    background: rgba(76, 201, 240, 0.3); /* More prominent on hover */
+    transform: scale(1.1) rotate(0deg); /* Slight scale effect */
+}
+
+.faq-question.active i:hover {
+    transform: scale(1.1) rotate(180deg); /* Maintain rotation when active */
 }
 
 /* Contact Section */

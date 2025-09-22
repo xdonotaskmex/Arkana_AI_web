@@ -269,6 +269,7 @@ function initializeFAQ() {
         
         faqItems.forEach((item, index) => {
             const question = item.querySelector('.faq-question');
+            const icon = item.querySelector('.faq-question i');
             
             // Debug: Check if question element is found
             console.log(`FAQ Item ${index}:`, item);
@@ -279,29 +280,48 @@ function initializeFAQ() {
                 return;
             }
             
-            question.addEventListener('click', () => {
+            // Add click event to the question container
+            question.addEventListener('click', (e) => {
                 console.log('FAQ question clicked:', question);
-                
-                // Close all other FAQ items
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-                
-                // Toggle current item
-                item.classList.toggle('active');
-                console.log('Item active state:', item.classList.contains('active'));
-                
-                // Reinitialize Feather icons to show updated chevron icons
-                if (typeof feather !== 'undefined') {
-                    setTimeout(function() {
-                        feather.replace();
-                    }, 100);
+                // Check if click was on the icon itself
+                if (e.target.tagName === 'I') {
+                    console.log('Icon click detected, handled separately');
+                    return;
                 }
+                handleFAQToggle(item, faqItems);
             });
+            
+            // Also add click event to the icon specifically
+            if (icon) {
+                icon.addEventListener('click', (e) => {
+                    console.log('FAQ icon clicked:', icon);
+                    e.stopPropagation(); // Prevent event bubbling
+                    handleFAQToggle(item, faqItems);
+                });
+            }
         });
     } catch (error) {
         console.error('Error initializing FAQ:', error);
+    }
+}
+
+// Helper function to handle FAQ toggle logic
+function handleFAQToggle(item, allItems) {
+    // Close all other FAQ items
+    allItems.forEach(otherItem => {
+        if (otherItem !== item) {
+            otherItem.classList.remove('active');
+        }
+    });
+    
+    // Toggle current item
+    item.classList.toggle('active');
+    console.log('Item active state:', item.classList.contains('active'));
+    
+    // Reinitialize Feather icons to show updated chevron icons
+    if (typeof feather !== 'undefined') {
+        setTimeout(function() {
+            feather.replace();
+        }, 100);
     }
 }
