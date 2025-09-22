@@ -9,12 +9,12 @@
     <meta name="keywords" content="ARKANA AI, cryptocurrency analysis, AI trading bot, technical analysis, crypto signals, Telegram bot, Bitcoin analysis, Ethereum analysis">
     <meta name="author" content="ARKANA AI">
     
-    <!-- Redirect if needed (handles GitHub Pages subdirectory issue) -->
-    <meta http-equiv="refresh" content="0; url=https://www.arkanaai.xyz/" />
+    <!-- Redirect if accessed with wrong path -->
     <script>
-        // Fallback redirect for better reliability
-        if (window.location.hostname !== 'www.arkanaai.xyz' && window.location.hostname !== 'arkanaai.xyz') {
-            location.replace("https://www.arkanaai.xyz/");
+        // Check if we're on the wrong path and redirect
+        if (window.location.pathname.includes('/arkana-ai-web/')) {
+            const newUrl = 'https://www.arkanaai.xyz' + window.location.hash;
+            window.location.replace(newUrl);
         }
     </script>
     
