@@ -259,10 +259,29 @@ function initializeFAQ() {
     try {
         const faqItems = document.querySelectorAll('.faq-item');
         
-        faqItems.forEach(item => {
+        // Debug: Check if FAQ items are found
+        console.log('FAQ Items found:', faqItems.length);
+        
+        if (faqItems.length === 0) {
+            console.warn('No FAQ items found. Check if FAQ section exists in HTML.');
+            return;
+        }
+        
+        faqItems.forEach((item, index) => {
             const question = item.querySelector('.faq-question');
             
+            // Debug: Check if question element is found
+            console.log(`FAQ Item ${index}:`, item);
+            console.log(`Question ${index}:`, question);
+            
+            if (!question) {
+                console.warn(`No question found for FAQ item ${index}`);
+                return;
+            }
+            
             question.addEventListener('click', () => {
+                console.log('FAQ question clicked:', question);
+                
                 // Close all other FAQ items
                 faqItems.forEach(otherItem => {
                     if (otherItem !== item) {
@@ -272,6 +291,7 @@ function initializeFAQ() {
                 
                 // Toggle current item
                 item.classList.toggle('active');
+                console.log('Item active state:', item.classList.contains('active'));
                 
                 // Reinitialize Feather icons to show updated chevron icons
                 if (typeof feather !== 'undefined') {
