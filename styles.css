@@ -1179,10 +1179,10 @@ section {
     margin-top: 1rem;
     padding-left: 1rem;
     border-left: 2px solid var(--primary-accent);
-    max-height: 0;
+    max-height: 0 !important;
     overflow: hidden;
     transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
-    opacity: 0;
+    opacity: 0 !important;
 }
 
 .faq-answer p {
@@ -1213,13 +1213,13 @@ section {
 }
 
 .faq-question.active .faq-answer {
-    max-height: 2000px; /* Increased from 1000px to ensure enough space */
-    padding: 1rem;
-    opacity: 1;
+    max-height: 2000px !important; /* Increased from 1000px to ensure enough space */
+    padding: 1rem !important;
+    opacity: 1 !important;
 }
 
 .faq-question.active i {
-    transform: rotate(180deg);
+    transform: rotate(180deg) !important;
 }
 
 .faq-question i {
