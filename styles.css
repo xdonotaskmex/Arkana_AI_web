@@ -1126,10 +1126,10 @@ section {
     margin-top: 1rem;
     padding-left: 1rem;
     border-left: 2px solid var(--primary-accent);
-    display: none;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+    transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
 }
 
 .faq-answer p {
@@ -1140,9 +1140,9 @@ section {
 }
 
 .faq-question.active .faq-answer {
-    display: block;
-    max-height: 500px; /* Adjust as needed */
+    max-height: 1000px;
     padding: 1rem;
+    opacity: 1;
 }
 
 .faq-question.active i {
@@ -1196,12 +1196,13 @@ section {
 
 .contact-item {
     text-align: center;
-    padding: 0.75rem;
+    padding: 1rem;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
     z-index: 1; /* Ensure content is visible */
-    min-width: 150px;
+    min-width: 200px; /* Increased from 150px */
+    width: auto;
 }
 
 .contact-item:hover {
@@ -1211,7 +1212,7 @@ section {
 }
 
 .contact-icon {
-    font-size: 1.5rem;
+    font-size: 2rem; /* Increased from 1.5rem */
     margin-bottom: 0.5rem;
     color: var(--primary-accent);
     text-shadow: 0 0 5px rgba(76, 201, 240, 0.5);
@@ -1221,19 +1222,19 @@ section {
     font-family: 'Orbitron', sans-serif;
     margin-bottom: 0.5rem;
     color: var(--text-light);
-    font-size: 1rem;
+    font-size: 1.3rem; /* Increased from 1rem */
 }
 
 .contact-content p {
     font-family: 'Rajdhani', sans-serif;
     color: rgba(224, 224, 224, 0.8);
     margin-bottom: 0.5rem;
-    font-size: 0.8rem;
+    font-size: 0.9rem; /* Increased from 0.8rem */
 }
 
 .contact-content .btn {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
+    font-size: 0.85rem; /* Increased from 0.75rem */
+    padding: 0.3rem 0.7rem; /* Increased padding */
 }
 
 /* Footer */
@@ -1341,6 +1342,34 @@ section {
     .nav-link {
         margin: 0.2rem 0.3rem;
     }
+    
+    /* FAQ Section Mobile Optimization */
+    .faq-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.1rem;
+    }
+    
+    .faq-answer {
+        padding-left: 0.5rem;
+    }
+    
+    /* Contact Section Mobile Optimization */
+    .contact-item {
+        min-width: 100%;
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .contact-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .contact-icon {
+        font-size: 1.8rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1377,5 +1406,103 @@ section {
     
     .social-links {
         justify-content: center;
+    }
+    
+    /* Additional Mobile Optimizations */
+    .container {
+        padding: 0 15px;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    .hero-section {
+        padding: 4rem 0 2rem;
+    }
+    
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .navbar-toggler {
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+    
+    .navbar-collapse {
+        background: rgba(13, 20, 31, 0.95);
+        border-radius: 10px;
+        margin-top: 1rem;
+        padding: 1rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-link {
+        padding: 0.5rem 1rem;
+        text-align: center;
+    }
+    
+    .btn-gradient {
+        margin: 0.5rem 0;
+        display: block;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Contact Section Mobile Optimization */
+    .contact-section {
+        padding: 2rem 0;
+    }
+    
+    .contact-container {
+        padding: 1rem;
+    }
+    
+    .contact-options {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .contact-item {
+        width: 100%;
+        min-width: auto;
+        justify-content: flex-start;
+    }
+    
+    .contact-content {
+        text-align: left;
+    }
+    
+    /* FAQ Section Mobile Optimization */
+    .faq-section {
+        padding: 3rem 0;
+    }
+    
+    .faq-item {
+        padding: 1rem 0;
+    }
+    
+    .faq-question {
+        padding: 0.5rem 0;
+    }
+    
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+    
+    .commands-container, .analysis-preview, .pricing-card {
+        padding: 1.5rem;
+    }
+    
+    .command-syntax {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .feature-card, .persona-card {
+        padding: 1.5rem;
     }
 }
