@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found - ARKANA AI</title>
+    <meta http-equiv="refresh" content="0; url=https://www.arkanaai.xyz/" />
+    <script>
+        // Fallback redirect for better reliability
+        location.replace("https://www.arkanaai.xyz/");
+    </script>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/arkana-ai-logo.png" type="image/png">
     <style>
@@ -67,7 +72,14 @@
         <h1 class="error-code">404</h1>
         <h2 class="error-message">Page <span class="gradient-text">Not Found</span></h2>
         <p class="error-description">Sorry, the page you're looking for doesn't exist or has been moved.</p>
-        <a href="/" class="btn">Return to Homepage</a>
+        <p class="error-description">Redirecting to the main page...</p>
+        <a href="https://www.arkanaai.xyz/" class="btn">Go to Homepage</a>
     </div>
+    <script>
+        // Ensure redirect happens even if meta refresh fails
+        setTimeout(function() {
+            window.location.href = "https://www.arkanaai.xyz/";
+        }, 3000);
+    </script>
 </body>
 </html>
