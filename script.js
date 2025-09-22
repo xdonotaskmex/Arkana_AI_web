@@ -285,7 +285,7 @@ function initializeFAQ() {
                 console.log('FAQ question clicked:', question);
                 // Check if click was on the icon itself
                 if (e.target.tagName === 'I') {
-                    console.log('Icon click detected, handled separately');
+                    // Let the icon handler deal with it
                     return;
                 }
                 handleFAQToggle(item, faqItems);
