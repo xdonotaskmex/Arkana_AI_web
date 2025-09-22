@@ -8,6 +8,13 @@
     <meta name="description" content="ARKANA AI is a premium Telegram bot providing AI-powered technical analysis for cryptocurrency trading. Get real-time market insights, 6 specialized AI personas, and professional-grade trading signals.">
     <meta name="keywords" content="ARKANA AI, cryptocurrency analysis, AI trading bot, technical analysis, crypto signals, Telegram bot, Bitcoin analysis, Ethereum analysis">
     <meta name="author" content="ARKANA AI">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" as="script">
+    <link rel="preload" href="script.js" as="script">
+    
     <meta property="og:title" content="ARKANA AI - AI-Powered Crypto Trading Analysis">
     <meta property="og:description" content="Unlock the power of advanced AI algorithms to analyze cryptocurrency markets with precision technical indicators, real-time data, and professional-grade insights for smarter trading decisions.">
     <meta property="og:type" content="website">
@@ -87,9 +94,9 @@
       "offers": {
         "@type": "Offer",
         "name": "Premium Trading Analysis",
-        "price": "0.00",
+        "price": "8.99",
         "priceCurrency": "USD",
-        "description": "Free and premium AI-powered cryptocurrency trading analysis"
+        "description": "Premium AI-powered cryptocurrency trading analysis with advanced personas and unlimited analyses"
       }
     }
     </script>
@@ -105,10 +112,27 @@
     <link rel="icon" href="images/arkana-ai-logo.png" type="image/png">
 </head>
 <body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <noscript>
+        <div class="no-js-warning">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2>JavaScript Required</h2>
+                        <p>This website requires JavaScript to function properly. Please enable JavaScript in your browser settings to experience the full functionality of ARKANA AI.</p>
+                        <p>Key features like interactive charts, animations, and real-time data visualization depend on JavaScript.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </noscript>
+    
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top" role="navigation" aria-label="Main navigation">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#" aria-label="ARKANA AI Home">
                 <span class="gradient-text">ARKANA AI</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -117,25 +141,31 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
+                        <a class="nav-link" href="#features" aria-label="Features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#personas">AI Personas</a>
+                        <a class="nav-link" href="#personas" aria-label="AI Personas">AI Personas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#commands">Commands</a>
+                        <a class="nav-link" href="#commands" aria-label="Commands">Commands</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#feedback">Feedback</a>
+                        <a class="nav-link" href="#pricing" aria-label="Pricing">Pricing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#preview">Preview</a>
+                        <a class="nav-link" href="#faq" aria-label="FAQ">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#disclaimer">Disclaimer</a>
+                        <a class="nav-link" href="#feedback" aria-label="Feedback">Feedback</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-gradient" href="https://t.me/cryptointeractivebot/1" target="_blank">
+                        <a class="nav-link" href="#preview" aria-label="Preview">Preview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" aria-label="Contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-gradient" href="https://t.me/cryptointeractivebot/1" target="_blank" aria-label="Try ARKANA AI">
                             <i data-feather="navigation"></i> Try ARKANA
                         </a>
                     </li>
@@ -145,7 +175,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" id="main-content">
         <div id="globe-background"></div>
         <div class="container hero-content">
             <div class="row align-items-center">
@@ -197,7 +227,7 @@
                             <i data-feather="cpu"></i>
                         </div>
                         <h3>AI-Powered Analysis</h3>
-                        <p>Six specialized AI personas provide unique perspectives on market trends, momentum, risk, and more.</p>
+                        <p>Six specialized AI personas provide unique perspectives on market trends, momentum, risk, and more. Each persona focuses on a specific aspect of technical analysis for comprehensive insights.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
@@ -206,7 +236,7 @@
                             <i data-feather="bar-chart-2"></i>
                         </div>
                         <h3>Technical Analysis</h3>
-                        <p>Comprehensive technical indicators and Fibonacci levels with divine ratios for precise market insights.</p>
+                        <p>Comprehensive technical indicators including EMA, SMA, MACD, RSI, Bollinger Bands, and Fibonacci levels with divine ratios for precise market insights and entry/exit points.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
@@ -215,7 +245,7 @@
                             <i data-feather="trending-up"></i>
                         </div>
                         <h3>Real-time Data</h3>
-                        <p>Cryptocurrency market data from CoinGecko API with professional-grade technical charts.</p>
+                        <p>Cryptocurrency market data from CoinGecko API with professional-grade technical charts updated in real-time for the most current market conditions.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up">
@@ -224,7 +254,7 @@
                             <i data-feather="pie-chart"></i>
                         </div>
                         <h3>Visual Charts</h3>
-                        <p>Professional-grade technical charts with Plotly and matplotlib for clear market visualization.</p>
+                        <p>Professional-grade technical charts with Plotly and matplotlib for clear market visualization. Interactive charts help you identify patterns and trends at a glance.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
@@ -233,7 +263,7 @@
                             <i data-feather="rss"></i>
                         </div>
                         <h3>News Analysis</h3>
-                        <p>Financial news analysis using Tavily API to understand market sentiment and impact.</p>
+                        <p>Financial news analysis using Tavily API to understand market sentiment and impact. Stay informed about events that could affect cryptocurrency prices.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
@@ -242,7 +272,7 @@
                             <i data-feather="star"></i>
                         </div>
                         <h3>Premium Features</h3>
-                        <p>Subscription-based access to advanced personas and unlimited analyses for serious traders.</p>
+                        <p>Subscription-based access to advanced personas and unlimited analyses for serious traders. Premium features include exclusive indicators and priority processing.</p>
                     </div>
                 </div>
             </div>
@@ -381,30 +411,38 @@
                         <div class="command-item">
                             <div class="command-syntax">/start</div>
                             <div class="command-description">Initialize bot and welcome message</div>
+                            <div class="command-usage">Use this command to start your interaction with ARKANA AI</div>
                         </div>
                         <div class="command-item">
                             <div class="command-syntax">/help</div>
                             <div class="command-description">Display detailed help documentation</div>
+                            <div class="command-usage">Get a full list of available commands and how to use them</div>
                         </div>
                         <div class="command-item">
                             <div class="command-syntax">/analyze &lt;symbol&gt; &lt;persona&gt;</div>
-                            <div class="command-description">Analyze cryptocurrency with AI persona (e.g., /analyze BTC trend)</div>
+                            <div class="command-description">Analyze cryptocurrency with AI persona</div>
+                            <div class="command-example">/analyze BTC trend</div>
+                            <div class="command-usage">Use this to get technical analysis for any cryptocurrency using a specific AI persona</div>
                         </div>
                         <div class="command-item">
                             <div class="command-syntax">/list_personas</div>
                             <div class="command-description">Show available AI trading personas with details</div>
+                            <div class="command-usage">View all available AI personas and their specializations</div>
                         </div>
                         <div class="command-item">
                             <div class="command-syntax">/analyze_news</div>
                             <div class="command-description">Analyze financial news articles with AI via URL</div>
+                            <div class="command-usage">Provide a URL to a financial news article for AI-powered sentiment analysis</div>
                         </div>
                         <div class="command-item">
                             <div class="command-syntax">/subscribe</div>
                             <div class="command-description">Access premium features and unlimited analyses</div>
+                            <div class="command-usage">Subscribe for $8.99/month to unlock all premium AI personas and unlimited analyses</div>
                         </div>
                         <div class="command-item">
                             <div class="command-syntax">/feedback</div>
                             <div class="command-description">Report bugs or share your experience</div>
+                            <div class="command-usage">Help us improve by sharing your feedback or reporting issues</div>
                         </div>
                     </div>
                 </div>
@@ -511,8 +549,65 @@
                                 <p class="recommendation">BNB presents a HIGH-risk trading environment. While the price is above key EMAs, weakening momentum and overbought conditions suggest potential reversals. Prioritize risk management using tight stops and conservative position sizing. Monitor the MACD and Bollinger Bands closely for confirmation signals.</p>
                             </div>
                             <div class="analysis-section">
-                                <p class="disclaimer-note">⚠️ Disclaimer: This analysis is for educational purposes only. DYOR.</p>
+                                <p class="disclaimer-note">⚠️ ARKANA AI is intended solely for informational purposes and does not constitute financial advice. Cryptocurrency trading carries substantial risk and may not be suitable for all investors. Always conduct your own research and consult with a licensed financial advisor before making investment decisions.</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title gradient-text" data-aos="fade-up">Simple, Transparent <span class="gradient-text">Pricing</span></h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Unlock the full power of ARKANA AI with our premium subscription</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Free</h3>
+                            <div class="price">$0<span class="period">/month</span></div>
+                            <p>Basic access to ARKANA AI</p>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i data-feather="check-circle"></i> 3 AI Personas</li>
+                                <li><i data-feather="check-circle"></i> Basic Technical Analysis</li>
+                                <li><i data-feather="check-circle"></i> Limited Requests</li>
+                                <li><i data-feather="x-circle"></i> No News Analysis</li>
+                                <li><i data-feather="x-circle"></i> No Advanced Indicators</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-cta">
+                            <a href="https://t.me/cryptointeractivebot/1" target="_blank" class="btn btn-outline-light">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3>Premium</h3>
+                            <div class="price">$8.99<span class="period">/month</span></div>
+                            <p>Full access to all features</p>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i data-feather="check-circle"></i> All 6 AI Personas</li>
+                                <li><i data-feather="check-circle"></i> Advanced Technical Analysis</li>
+                                <li><i data-feather="check-circle"></i> Unlimited Requests</li>
+                                <li><i data-feather="check-circle"></i> News Analysis</li>
+                                <li><i data-feather="check-circle"></i> Priority Processing</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-cta">
+                            <a href="https://t.me/cryptointeractivebot/1" target="_blank" class="btn btn-primary">Subscribe Now</a>
                         </div>
                     </div>
                 </div>
@@ -527,10 +622,137 @@
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="section-title gradient-text" data-aos="fade-up">Ready to <span class="gradient-text">Elevate</span> Your Trading?</h2>
                     <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Join thousands of traders using ARKANA AI to make smarter investment decisions</p>
+                    <div class="security-badges" data-aos="fade-up" data-aos-delay="150">
+                        <div class="security-badge">
+                            <i data-feather="lock"></i>
+                            <span>Bank-Level Encryption</span>
+                        </div>
+                        <div class="security-badge">
+                            <i data-feather="shield"></i>
+                            <span>GDPR Compliant</span>
+                        </div>
+                        <div class="security-badge">
+                            <i data-feather="server"></i>
+                            <span>99.9% Uptime</span>
+                        </div>
+                    </div>
                     <div class="mt-4" data-aos="fade-up" data-aos-delay="200">
                         <a href="https://t.me/cryptointeractivebot/1" target="_blank" class="btn btn-primary btn-lg">
-                            <i data-feather="navigation"></i> Start Analyzing Now
+                            <i data-feather="navigation"></i> Start Analyzing Now - Just $8.99/month
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title gradient-text" data-aos="fade-up">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Everything you need to know about ARKANA AI</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="faq-container" data-aos="fade-up">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What is ARKANA AI?</h3>
+                                <i data-feather="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>ARKANA AI is a Telegram bot that provides AI-powered technical analysis for cryptocurrency trading. It offers real-time market insights, 6 specialized AI personas, and professional-grade trading signals to help you make informed trading decisions.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How much does ARKANA AI cost?</h3>
+                                <i data-feather="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>ARKANA AI offers both free and premium features. The premium subscription costs $8.99 monthly and provides access to advanced AI personas and unlimited analyses. You can subscribe using the <code>/subscribe</code> command in the bot.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How do I get started with ARKANA AI?</h3>
+                                <i data-feather="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Simply click the "Start Analyzing" button on our website or search for @cryptointeractivebot on Telegram. Use the <code>/start</code> command to initialize the bot and <code>/help</code> to see all available commands.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Is my data secure with ARKANA AI?</h3>
+                                <i data-feather="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, we take data security seriously. ARKANA AI only accesses the minimum required data to provide analysis and does not store personal information. We use industry-standard encryption to protect your data.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Which cryptocurrencies does ARKANA AI support?</h3>
+                                <i data-feather="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>ARKANA AI supports analysis for all major cryptocurrencies including Bitcoin (BTC), Ethereum (ETH), Ripple (XRP), Litecoin (LTC), and hundreds of other altcoins available on major exchanges.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title gradient-text" data-aos="fade-up">Get in <span class="gradient-text">Touch</span></h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Need help or have questions? We're here to support you</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-container" data-aos="fade-up">
+                        <div class="contact-options">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i data-feather="send"></i>
+                                </div>
+                                <div class="contact-content">
+                                    <h3>Telegram Support</h3>
+                                    <p>Get immediate assistance from our support team</p>
+                                    <a href="https://t.me/DoNotAskMex" target="_blank" class="btn btn-outline-light mt-2">Contact Support</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i data-feather="twitter"></i>
+                                </div>
+                                <div class="contact-content">
+                                    <h3>Twitter</h3>
+                                    <p>Follow us for updates and announcements</p>
+                                    <a href="https://x.com/arkanaalpha" target="_blank" class="btn btn-outline-light mt-2">Follow Us</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i data-feather="message-circle"></i>
+                                </div>
+                                <div class="contact-content">
+                                    <h3>Telegram Bot</h3>
+                                    <p>Start using ARKANA AI right away</p>
+                                    <a href="https://t.me/cryptointeractivebot/1" target="_blank" class="btn btn-outline-light mt-2">Start Bot</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -549,22 +771,26 @@
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="social-links">
-                        <a href="https://x.com/arkanaalpha" class="social-link" target="_blank"><i data-feather="twitter"></i></a>
-                        <a href="https://t.me/cryptointeractivebot/1" class="social-link" target="_blank"><i data-feather="send"></i></a>
+                        <a href="https://x.com/arkanaalpha" class="social-link" target="_blank" aria-label="Twitter"><i data-feather="twitter"></i></a>
+                        <a href="https://t.me/cryptointeractivebot/1" class="social-link" target="_blank" aria-label="Telegram Bot"><i data-feather="send"></i></a>
+                        <a href="https://t.me/DoNotAskMex" class="social-link" target="_blank" aria-label="Support Telegram"><i data-feather="message-circle"></i></a>
                     </div>
                     <p class="footer-text mt-3">&copy; 2025 ARKANA AI. All rights reserved.</p>
-                    <p class="footer-text small-disclaimer">Disclaimer: This analysis is for informational purposes only and should not be considered financial advice. Cryptocurrency trading involves significant risk.</p>
+                    <p class="footer-text small-disclaimer">ARKANA AI is intended solely for informational purposes and does not constitute financial advice. Cryptocurrency trading carries substantial risk and may not be suitable for all investors. Always conduct your own research and consult with a licensed financial advisor before making investment decisions.</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <!-- Critical scripts loaded first -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.globe.min.js"></script>
     <script src="script.js"></script>
+    
+    <!-- Non-critical scripts loaded asynchronously -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.globe.min.js" async></script>
 </body>
 </html>

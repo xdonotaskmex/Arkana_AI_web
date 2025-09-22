@@ -1,15 +1,89 @@
 // Initialize AOS (Animate On Scroll)
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS
+    // Check if AOS is available, if not wait for it
+    if (typeof AOS !== 'undefined') {
+        initializeAOS();
+    } else {
+        // Wait for AOS to load
+        const checkAOS = setInterval(() => {
+            if (typeof AOS !== 'undefined') {
+                clearInterval(checkAOS);
+                initializeAOS();
+            }
+        }, 100);
+        
+        // Timeout after 5 seconds
+        setTimeout(() => {
+            clearInterval(checkAOS);
+        }, 5000);
+    }
+    
+    // Check if Feather Icons is available, if not wait for it
+    if (typeof feather !== 'undefined') {
+        initializeFeather();
+    } else {
+        // Wait for Feather Icons to load
+        const checkFeather = setInterval(() => {
+            if (typeof feather !== 'undefined') {
+                clearInterval(checkFeather);
+                initializeFeather();
+            }
+        }, 100);
+        
+        // Timeout after 5 seconds
+        setTimeout(() => {
+            clearInterval(checkFeather);
+        }, 5000);
+    }
+    
+    // Check if VANTA is available, if not wait for it
+    if (typeof VANTA !== 'undefined') {
+        initializeVanta();
+    } else {
+        // Wait for VANTA to load
+        const checkVanta = setInterval(() => {
+            if (typeof VANTA !== 'undefined') {
+                clearInterval(checkVanta);
+                initializeVanta();
+            }
+        }, 100);
+        
+        // Timeout after 5 seconds
+        setTimeout(() => {
+            clearInterval(checkVanta);
+        }, 5000);
+    }
+    
+    // Initialize navbar functionality
+    initializeNavbar();
+    
+    // Create flying particles effect
+    createFlyingParticles();
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        // Reinitialize any components that need it on resize
+    });
+});
+
+function initializeAOS() {
     AOS.init({
         duration: 1000,
         easing: 'ease-in-out',
         once: true
     });
+}
 
-    // Initialize Feather Icons
+function initializeFeather() {
     feather.replace();
+    
+    // Reinitialize Feather Icons to include new icons in feedback section
+    setTimeout(() => {
+        feather.replace();
+    }, 100);
+}
 
+function initializeVanta() {
     // Initialize Vanta.js Globe background
     if (document.getElementById('globe-background')) {
         VANTA.GLOBE({
@@ -33,7 +107,9 @@ document.addEventListener('DOMContentLoaded', function() {
             backgroundAlpha: 1.00
         });
     }
+}
 
+function initializeNavbar() {
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -71,15 +147,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Create flying particles effect
-    createFlyingParticles();
+    // Enhanced navbar link highlighting
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
     
-    // Reinitialize Feather Icons to include new icons in feedback section
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 100)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+    
+    // Initialize Feather Icons again after FAQ section is loaded
     setTimeout(() => {
-        feather.replace();
-    }, 100);
-    
-});
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+    }, 500);
+}
 
 // Function to create flying particles effect
 function createFlyingParticles() {
@@ -89,7 +185,7 @@ function createFlyingParticles() {
     // Reduce particle frequency for better performance
     setInterval(() => {
         createParticle(heroSection);
-    }, 600); // Changed from 300ms to 600ms
+    }, 1000); // Changed from 600ms to 1000ms for better performance
 }
 
 // Function to create a single particle
@@ -121,10 +217,5 @@ function createParticle(container) {
         if (particle.parentNode) {
             particle.parentNode.removeChild(particle);
         }
-    }, 8000); // Reduced from 15000ms to 8000ms for better performance
+    }, 5000); // Reduced from 8000ms to 5000ms for better performance
 }
-
-// Handle window resize
-window.addEventListener('resize', function() {
-    // Reinitialize any components that need it on resize
-});
