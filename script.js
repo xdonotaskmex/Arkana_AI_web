@@ -62,8 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create flying particles effect
         createFlyingParticles();
         
-        // Initialize FAQ accordion
-        initializeFAQ();
+        // FAQ will be initialized after Feather icons are replaced
         
         // Handle window resize
         window.addEventListener('resize', function() {
@@ -91,8 +90,10 @@ function initializeFeather() {
         feather.replace();
         
         // Reinitialize Feather Icons to include new icons in feedback section
+        // and initialize FAQ after icons are replaced
         setTimeout(() => {
             feather.replace();
+            initializeFAQ();
         }, 100);
     } catch (error) {
         console.error('Error initializing Feather Icons:', error);
