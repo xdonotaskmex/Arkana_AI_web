@@ -62,6 +62,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create flying particles effect
         createFlyingParticles();
         
+        // Initialize FAQ accordion
+        initializeFAQ();
+        
         // Handle window resize
         window.addEventListener('resize', function() {
             // Reinitialize any components that need it on resize
@@ -248,5 +251,37 @@ function createParticle(container) {
         }, 5000); // Reduced from 8000ms to 5000ms for better performance
     } catch (error) {
         console.error('Error creating particle:', error);
+    }
+}
+
+// Function to initialize FAQ accordion
+function initializeFAQ() {
+    try {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+                
+                // Reinitialize Feather icons to show updated chevron icons
+                if (typeof feather !== 'undefined') {
+                    setTimeout(function() {
+                        feather.replace();
+                    }, 100);
+                }
+            });
+        });
+    } catch (error) {
+        console.error('Error initializing FAQ:', error);
     }
 }
