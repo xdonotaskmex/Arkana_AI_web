@@ -74,6 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create flying particles effect
     createFlyingParticles();
     
+    // Reinitialize Feather Icons to include new icons in feedback section
+    setTimeout(() => {
+        feather.replace();
+    }, 100);
+    
 });
 
 // Function to create flying particles effect
