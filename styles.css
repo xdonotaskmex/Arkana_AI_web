@@ -187,14 +187,23 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.8rem;
   letter-spacing: 2px;
   text-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .logo-img {
-  height: 40px;
+  height: 2.2rem; /* Matches the text height of 1.8rem + some margin */
   width: auto;
-  margin-right: 10px;
-  border-radius: 50%;
+  margin-right: 0.8rem;
+  border-radius: 8px;
   box-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover .logo-img {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(76, 201, 240, 0.7);
 }
 
 .nav-link {
@@ -456,19 +465,16 @@ section {
   opacity: 0.5;
 }
 
-@keyframes glow {
-  0% {
-    filter: blur(5px);
-    opacity: 0.5;
-  }
-  50% {
-    filter: blur(10px);
-    opacity: 0.8;
-  }
-  100% {
-    filter: blur(5px);
-    opacity: 0.5;
-  }
+/* Added metallic details to feature cards */
+.feature-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.3), transparent);
+  z-index: 2;
 }
 
 .feature-card:hover {
@@ -518,6 +524,18 @@ section {
   border-radius: 17px;
   animation: glow 3s linear infinite;
   opacity: 0.5;
+}
+
+/* Added metallic details to persona cards */
+.persona-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.3), transparent);
+  z-index: 2;
 }
 
 .persona-card:hover {
@@ -649,18 +667,16 @@ section {
   z-index: 1;
 }
 
-.commands-container::before {
+/* Added metallic details to commands container */
+.commands-container::after {
   content: "";
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, var(--primary-accent), var(--secondary-accent), var(--primary-accent));
-  z-index: -1;
-  border-radius: 17px;
-  animation: glow 3s linear infinite;
-  opacity: 0.5;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.3), transparent);
+  z-index: 2;
 }
 
 .command-item {
@@ -767,7 +783,30 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 1; /* Allow items to grow */
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Added metallic details to feedback items */
+.feedback-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.3), transparent);
+}
+
+.feedback-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.2), transparent);
 }
 
 .feedback-item:hover {
@@ -868,6 +907,18 @@ section {
     z-index: 1; /* Ensure content is visible */
 }
 
+/* Added metallic details to analysis preview */
+.analysis-preview::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.3), transparent);
+    z-index: 2;
+}
+
 .analysis-preview::before {
     content: "";
     position: absolute;
@@ -964,6 +1015,18 @@ section {
     height: 100%;
     transition: all 0.3s ease;
     z-index: 1; /* Ensure content is visible */
+}
+
+/* Added metallic details to pricing cards */
+.pricing-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.3), transparent);
+    z-index: 2;
 }
 
 .pricing-card:hover {
@@ -1295,7 +1358,30 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 1; /* Allow items to grow */
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Added metallic details to contact items */
+.contact-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.3), transparent);
+}
+
+.contact-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.2), transparent);
 }
 
 .contact-item:hover {
@@ -1381,6 +1467,29 @@ section {
     margin-bottom: 1rem;
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .footer-logo {
+        justify-content: flex-start;
+    }
+}
+
+.footer-logo-img {
+    height: 2.5rem; /* Slightly larger than header for footer prominence */
+    width: auto;
+    margin-right: 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
+    transition: all 0.3s ease;
+}
+
+.footer-logo:hover .footer-logo-img {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(76, 201, 240, 0.7);
 }
 
 .footer-text {
@@ -1448,6 +1557,11 @@ section {
     
     .navbar-brand {
         font-size: 1.5rem;
+    }
+    
+    .logo-img {
+        height: 1.8rem; /* Adjust logo size for mobile */
+        margin-right: 0.6rem;
     }
     
     .nav-link {
@@ -1545,6 +1659,12 @@ section {
     .footer-logo {
         font-size: 1.5rem;
         text-align: center;
+        justify-content: center;
+    }
+    
+    .footer-logo-img {
+        height: 1.8rem; /* Adjust footer logo size for mobile */
+        margin-right: 0.6rem;
     }
     
     .social-links {
@@ -1678,12 +1798,42 @@ section {
     overflow: hidden;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+/* Added metallic details to FAQ items */
+.faq-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.4), transparent);
+    opacity: 0.7;
+}
+
+.faq-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.2), transparent);
+    opacity: 0.5;
 }
 
 .faq-item:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(192, 192, 192, 0.3); /* Silver border on hover */
+}
+
+.faq-item.active {
+    border: 1px solid rgba(192, 192, 192, 0.5); /* More prominent silver border when active */
+    box-shadow: 0 5px 15px rgba(192, 192, 192, 0.2); /* Subtle silver glow */
 }
 
 .faq-question {
@@ -1693,6 +1843,7 @@ section {
     justify-content: space-between;
     align-items: center;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .faq-question h3 {
@@ -1700,6 +1851,14 @@ section {
     font-size: 1.2rem;
     color: #fff;
     font-weight: 500;
+}
+
+/* Added metallic effect to FAQ question text */
+.faq-question h3::before {
+    content: "✦";
+    color: silver;
+    margin-right: 10px;
+    text-shadow: 0 0 5px rgba(192, 192, 192, 0.7);
 }
 
 .faq-question .icon {
@@ -1710,6 +1869,8 @@ section {
 
 .faq-item.active .faq-question .icon {
     transform: rotate(180deg);
+    color: silver; /* Silver color for icon when active */
+    text-shadow: 0 0 8px rgba(192, 192, 192, 0.8); /* Glow effect */
 }
 
 .faq-answer {
@@ -1722,7 +1883,7 @@ section {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 2000px !important; /* Increased from 1000px to ensure enough space */
+    max-height: 2000px !important;
     padding: 1rem !important;
     opacity: 1 !important;
 }
