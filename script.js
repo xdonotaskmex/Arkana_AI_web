@@ -199,6 +199,16 @@ function initializeNavbar() {
                 feather.replace();
             }
         }, 500);
+        
+        // Add event listener for navbar toggler to improve mobile experience
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        
+        if (navbarToggler && navbarCollapse) {
+            navbarToggler.addEventListener('click', function() {
+                navbarCollapse.classList.toggle('show');
+            });
+        }
     } catch (error) {
         console.error('Error initializing navbar:', error);
     }
@@ -213,7 +223,7 @@ function createFlyingParticles() {
         // Reduce particle frequency for better performance
         setInterval(() => {
             createParticle(heroSection);
-        }, 1000); // Changed from 600ms to 1000ms for better performance
+        }, 1500); // Increased from 1000ms to 1500ms for better performance
     } catch (error) {
         console.error('Error creating flying particles:', error);
     }
@@ -249,7 +259,7 @@ function createParticle(container) {
             if (particle.parentNode) {
                 particle.parentNode.removeChild(particle);
             }
-        }, 5000); // Reduced from 8000ms to 5000ms for better performance
+        }, 8000); // Increased from 5000ms to 8000ms for smoother animation
     } catch (error) {
         console.error('Error creating particle:', error);
     }
@@ -260,9 +270,6 @@ function initializeFAQ() {
     try {
         const faqItems = document.querySelectorAll('.faq-item');
         
-        // Debug: Check if FAQ items are found
-        console.log('FAQ Items found:', faqItems.length);
-        
         if (faqItems.length === 0) {
             console.warn('No FAQ items found. Check if FAQ section exists in HTML.');
             return;
@@ -270,59 +277,55 @@ function initializeFAQ() {
         
         faqItems.forEach((item, index) => {
             const question = item.querySelector('.faq-question');
-            const icon = item.querySelector('.faq-question i');
-            
-            // Debug: Check if question element is found
-            console.log(`FAQ Item ${index}:`, item);
-            console.log(`Question ${index}:`, question);
+            const answer = item.querySelector('.faq-answer');
             
             if (!question) {
-                console.warn(`No question found for FAQ item ${index}`);
+                console.warn('No question found for FAQ item');
                 return;
             }
             
+            // Set initial ARIA attributes
+            question.setAttribute('aria-controls', `faq-answer-${index + 1}`);
+            if (answer) {
+                answer.setAttribute('id', `faq-answer-${index + 1}`);
+            }
+            
             // Add click event to the question container
-            question.addEventListener('click', (e) => {
-                console.log('FAQ question clicked:', question);
-                // Check if click was on the icon itself
-                if (e.target.tagName === 'I') {
-                    // Let the icon handler deal with it
-                    return;
+            question.addEventListener('click', () => {
+                const isExpanded = question.getAttribute('aria-expanded') === 'true';
+                
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        const otherQuestion = otherItem.querySelector('.faq-question');
+                        if (otherQuestion) {
+                            otherQuestion.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+                question.setAttribute('aria-expanded', !isExpanded);
+                
+                // Reinitialize Feather icons to show updated chevron icons
+                if (typeof feather !== 'undefined') {
+                    setTimeout(function() {
+                        feather.replace();
+                    }, 100);
                 }
-                handleFAQToggle(item, faqItems);
             });
             
-            // Also add click event to the icon specifically
-            if (icon) {
-                icon.addEventListener('click', (e) => {
-                    console.log('FAQ icon clicked:', icon);
-                    e.stopPropagation(); // Prevent event bubbling
-                    handleFAQToggle(item, faqItems);
-                });
-            }
+            // Add keyboard support
+            question.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    question.click();
+                }
+            });
         });
     } catch (error) {
         console.error('Error initializing FAQ:', error);
-    }
-}
-
-// Helper function to handle FAQ toggle logic
-function handleFAQToggle(item, allItems) {
-    // Close all other FAQ items
-    allItems.forEach(otherItem => {
-        if (otherItem !== item) {
-            otherItem.classList.remove('active');
-        }
-    });
-    
-    // Toggle current item
-    item.classList.toggle('active');
-    console.log('Item active state:', item.classList.contains('active'));
-    
-    // Reinitialize Feather icons to show updated chevron icons
-    if (typeof feather !== 'undefined') {
-        setTimeout(function() {
-            feather.replace();
-        }, 100);
     }
 }

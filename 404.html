@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found - ARKANA AI</title>
-    <meta http-equiv="refresh" content="0; url=https://www.arkanaai.xyz/" />
-    <script>
-        // Fallback redirect for better reliability
-        location.replace("https://www.arkanaai.xyz/");
-    </script>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="IMG_1548.JPG" type="image/jpeg">
     <style>
@@ -65,6 +60,11 @@
             background-clip: text;
             text-fill-color: transparent;
         }
+        .redirect-timer {
+            font-size: 0.9rem;
+            color: rgba(224, 224, 224, 0.6);
+            margin-top: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -72,14 +72,29 @@
         <h1 class="error-code">404</h1>
         <h2 class="error-message">Page <span class="gradient-text">Not Found</span></h2>
         <p class="error-description">Sorry, the page you're looking for doesn't exist or has been moved.</p>
-        <p class="error-description">Redirecting to the main page...</p>
+        <p class="error-description">You will be redirected to the homepage shortly.</p>
         <a href="https://www.arkanaai.xyz/" class="btn">Go to Homepage</a>
+        <p class="redirect-timer">Redirecting in <span id="countdown">5</span> seconds...</p>
     </div>
     <script>
-        // Ensure redirect happens even if meta refresh fails
+        // Countdown timer for redirect
+        let countdown = 5;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdownInterval = setInterval(function() {
+            countdown--;
+            countdownElement.textContent = countdown;
+            
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = "https://www.arkanaai.xyz/";
+            }
+        }, 1000);
+        
+        // Also redirect after 5 seconds if the interval fails
         setTimeout(function() {
             window.location.href = "https://www.arkanaai.xyz/";
-        }, 3000);
+        }, 5000);
     </script>
 </body>
 </html>
